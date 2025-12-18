@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghost Runner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hud">
+    <span>Coins: <strong id="coins">0</strong></span>
+    <span>High Score: <strong id="highScore">0</strong></span>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <div class="game-over" id="gameOver">
+    <h1>Game Over</h1>
+    <p>Coins Collected: <span id="finalScore">0</span></p>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ghost Runner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Ghost Runner 3D</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Import Map for Three.js -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./node_modules/three/build/three.module.js"
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-  <div class="hud">
-    <span>Coins: <strong id="coins">0</strong></span>
-    <span>High Score: <strong id="highScore">0</strong></span>
+  <!-- Game Container -->
+  <div id="game-container"></div>
+
+  <!-- HUD -->
+  <div class="hud" id="hud">
+    <div class="score-container">
+      <div class="label">SCORE</div>
+      <div class="value" id="score">0</div>
+    </div>
+    <div class="coin-container">
+      <div class="icon">🟡</div>
+      <div class="value" id="coins">0</div>
+    </div>
+    <button id="pauseBtn">❚❚</button>
   </div>
 
-  <canvas id="gameCanvas"></canvas>
-
-  <div class="game-over" id="gameOver">
-    <h1>Game Over</h1>
-    <p>Coins Collected: <span id="finalScore">0</span></p>
-    <button id="restartBtn">Restart</button>
+  <!-- Start Screen -->
+  <div class="overlay" id="startScreen">
+    <div class="modal">
+      <h1 class="title">GHOST RUNNER <span class="highlight">3D</span></h1>
+      <p class="subtitle">Swipe to Move • Jump • Roll</p>
+      <button id="startBtn" class="primary-btn">PLAY NOW</button>
+    </div>
   </div>
 
-  <script src="game.js"></script>
+  <!-- Pause Screen -->
+  <div class="overlay hidden" id="pauseScreen">
+    <div class="modal">
+      <h2>PAUSED</h2>
+      <button id="resumeBtn" class="secondary-btn">RESUME</button>
+      <button id="quitBtn" class="text-btn">QUIT</button>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div class="overlay hidden" id="gameOverScreen">
+    <div class="modal">
+      <h2>GAME OVER</h2>
+      <div class="result-box">
+        <p>Score</p>
+        <h3 id="finalScore">0</h3>
+      </div>
+      <button id="restartBtn" class="primary-btn">TRY AGAIN</button>
+    </div>
+  </div>
+
+  <!-- Script (Type Module for Imports) -->
+  <script type="module" src="game.js"></script>
 </body>
+
 </html>

@@ -2,9 +2,7 @@
 
 :root {
   --primary: #facc15;
-  /* Yellow */
   --accent: #3b82f6;
-  /* Blue */
   --glass: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --text: #ffffff;
